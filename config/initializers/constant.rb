@@ -1,0 +1,1 @@
+  CITES = ["Anantapur","Bagalur","Berigai","Bhagepalli","Bangalore","Chittoor","Chikkaballpur","Denkanikottai","Gauribidanur","Hosur","Hindupur","Jawalgiri","Kanakapur","Kelamangalam", "Kadiri","Kolar","Mysore","Madanapalli","Penukonda","Shoolagiri","Thally","Tumakuru"]

@@ -1,0 +1,31 @@
+Title:
+      <%= @property.title%>&nbsp;<br/>
+ Price:
+      <%= @property.price%>&nbsp;<br/>
+   Area:
+      <%= @property.area  %>&nbsp;<br/>
+   Location:
+      <%= @property.location  %>&nbsp;<br/>
+
+    Latitude:
+      <%= @property.latitude  %>&nbsp;<br/>
+   
+  Longitude:
+      <%= @property.longitude  %>&nbsp;<br/>
+   
+    Description:
+      <%= @property.description  %>&nbsp;<br/>
+    Name:
+      <%= @property.name  %>&nbsp;<br/>
+   Email:
+      <%= @property.email  %>&nbsp;<br/>
+   
+  Mobile:
+      <%= @property.mobile  %><br/>
+      <% @property.images.each do |i| %>
+<%= image_tag i.image  %><br/>
+      <% end%>
+
+     <%= image_tag @property.document  %><br/>
+      <%= link_to "Back", properties_path %>
+   

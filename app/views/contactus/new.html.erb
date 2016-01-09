@@ -1,0 +1,36 @@
+<h1> Get in Touch</h1>
+
+
+<%= form_for @contactu do |f| %>
+<%if @contactu.errors.any?%>
+<div id="error_explanation">
+<ul>
+<% @contactu.errors.full_messages.each do |msg| %>
+<li><%= msg%></li>
+<% end %>
+</ul>
+
+</div>
+<%end%>
+<div>
+<%= f.label :name %>
+<%= f.text_field :name %>
+</div>
+
+<div>
+<%= f.label :email %>
+<%= f.text_field :email %>
+</div>
+
+<div>
+<%= f.label :subject %>
+<%= f.text_field :subject %>
+</div>
+
+<div>
+<%= f.label :message %>
+<%= f.text_field :message %>
+</div>
+<%= f.submit "subit"%>
+<%end%>
+

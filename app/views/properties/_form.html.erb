@@ -1,0 +1,120 @@
+<%= nested_form_for @property, :html => {multipart: :true} do |f| %>
+
+<%if @property.errors.any?%>
+<div id="error_explanation">
+<ul>
+<% @property.errors.full_messages.each do |msg| %>
+<li><%= msg%></li>
+<% end %>
+</ul>
+
+</div>
+<%end%>
+
+ <div class="control-group">
+    <%= f.label :type_of_land, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :type_of_land, options_for_select([["Select" ,""],["Agricultural","Agricultural"],["Residential","Residential"],["Industrial","Industrial"],["Commercial","Commercial"],["FarmLand","FarmLand"],["BarrenLand","BarrenLand"]], @property.type_of_land), :class => 'dropdownvisible'  %>
+    </div>
+  </div>
+
+ <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title%>
+    </div>
+  </div>
+
+   <div class="control-group">
+    <%= f.label :price, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :price%>
+    </div>
+  </div>
+
+   <div class="control-group">
+    <%= f.label :area, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :area  %>
+    </div>
+    <%= f.select :unit, options_for_select([["select","select"],["acrea", "acrea"],["sqrft","sqrft"]],f.object.unit)%> 
+  </div>
+
+
+
+<div class="control-group">
+    <%= f.label :state, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :state,options_for_select([["select",""],["Andhrapradesh","Andhrapradesh"],["Karnataka","Karnataka"],["Tamilnadu","Tamilnadu"]])  %>
+    </div>
+  </div>
+
+<div class="control-group">
+    <%= f.label :city, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :city,CITES  %>
+    </div>
+  </div>
+
+
+
+<div class="control-group">
+    <%= f.label :location, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :location  %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :latitude, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :latitude  %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :longitude, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :longitude  %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :description  %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name  %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email  %>
+    </div>
+  </div>
+
+ <div class="control-group">
+    <%= f.label :mobile, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :mobile  %>
+    </div>
+  </div>
+
+<%= f.fields_for :images do |i| %>
+  <%= i.file_field :image %>
+  <%= i.link_to_remove "Remove this image" %>
+<% end %>
+<p><%= f.link_to_add "Add a image", :images %></p>
+<br/>
+
+  <%= f.file_field :document %>
+
+<%= f.submit %>
+<%end%>
