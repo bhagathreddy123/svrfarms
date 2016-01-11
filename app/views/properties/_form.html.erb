@@ -49,10 +49,24 @@
     </div>
   </div>
 
-<div class="control-group">
+<div class="control-group kcity">
     <%= f.label :city, :class => 'control-label' %>
     <div class="controls">
-      <%= f.select :city,CITES  %>
+      <%= select_tag :kcity,options_for_select([["Select",""]] + K_CITIES.map {|kcity| kcity})  %>
+       
+    </div>
+  </div>
+<div class="control-group acity">
+    <%= f.label :city, :class => 'control-label' %>
+    <div class="controls">
+      <%= select_tag :acity,options_for_select([["Select",""]] + A_CITIES.map {|kcity| kcity})  %>
+         </div>
+  </div>
+  <div class="control-group tcity">
+    <%= f.label :city, :class => 'control-label' %>
+    <div class="controls">
+      <%= select_tag :tcity,options_for_select([["Select",""]] + T_CITIES.map {|kcity| kcity})  %>
+       
     </div>
   </div>
 
@@ -118,3 +132,42 @@
 
 <%= f.submit %>
 <%end%>
+
+<script>
+$("document").ready(function()
+ {
+ $(".kcity").hide();
+ $(".tcity").hide();
+ $(".acity").hide();
+
+  })
+$("#property_state").change(function()
+{
+var val = $("#property_state").val();
+if (val == "Andhrapradesh")
+{
+$(".kcity").hide();
+ $(".tcity").hide();
+ $(".acity").show();
+}
+
+else if (val == "Karnataka")
+{
+$(".kcity").show();
+ $(".tcity").hide();
+ $(".acity").hide();
+}
+else if (val == "Tamilnadu")
+{
+$(".kcity").hide();
+ $(".tcity").show();
+ $(".acity").hide();
+}
+
+});
+
+
+
+</script>
+
+

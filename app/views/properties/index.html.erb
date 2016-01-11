@@ -1,43 +1,41 @@
 <h1>Properties</h1>
 
 <table class="table table-stripped">
-<tr>
-<th>Title </th>
-<th>Price </th>
-<th>Area </th>
-<th>Location </th>
-<th>Latitude </th>
-<th>Longitude </th>
-<th>Description </th>
-<th>Name </th>
-<th>Email </th>
-<th>Mobile </th>
-<th>Action </th>
-</tr>
+      <tr>
+            <th>Title </th>
+            <th>Price </th>
+            <th>Area </th>
+            <th>Location </th>
+            <th>Latitude </th>
+            <th>Longitude </th>
+            <th>Description </th>
+            <th>State </th>
+            <th>City </th>
+            <th>Name </th>
+            <th>Email </th>
+            <th>Mobile </th>
+            <th>Action </th>
+      </tr>
 
+      <% @properties.each do |p|%>
+      <tr>
+       <td> <%= p.title%></td>
+       <td><%= p.price%></td>
+       <td><%= p.area  %>&nbsp;<%=p.unit%></td>
+       <td><%= p.location  %></td>
+       <td><%= p.latitude  %></td>
+       <td><%= p.longitude  %></td>
+       <td><%= p.state  %></td>
+       <td><%= p.city  %></td>
+       <td><%= p.name  %></td>
+       <td><%= p.email  %></td>
+       <td><%= p.mobile  %></td>
+       <td><%= link_to "Show", property_path(p)  %>|
+            <%= link_to "Edit", edit_property_path(p)  %>|
+            <%= link_to "Delete", property_path(p),method: :delete,:data => {:confirm => "Are you sure"}  %></td>
+      </tr>
 
-<% @properties.each do |p|%>
-<tr>
-     <td> <%= p.title%></td>
-      <td><%= p.price%></td>
-      <td><%= p.area  %>&nbsp;<%=p.unit%></td>
-      <td><%= p.location  %></td>
-
-      <td><%= p.latitude  %></td>
-   
-      <td><%= p.longitude  %></td>
-   
-      <td><%= p.description  %></td>
-      <td><%= p.name  %></td>
-      <td><%= p.email  %></td>
-   
-      <td><%= p.mobile  %></td>
-      <td><%= link_to "Show", property_path(p)  %>|
-      <%= link_to "Edit", edit_property_path(p)  %>|
-      <%= link_to "Delete", property_path(p),method: :delete,:data => {:confirm => "Are you sure"}  %></td>
-</tr>
-
-<% end %>
+      <% end %>
 </table>
 
-      <%= link_to "New", new_property_path %>
+<%= link_to "New", new_property_path %>

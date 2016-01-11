@@ -12,9 +12,14 @@ class PropertiesController < ApplicationController
   end
 
   def create
+        @city = params[:kcity] if params[:kcity].present?
+    @city = params[:tcity] if params[:tcity].present?
+    @city = params[:acity] if params[:acity].present?
     @property = Property.new(property_params)
+    @property.city = @city
     1.times{@property.images.build} if @property.images.blank?
     if @property.save
+
       redirect_to properties_path
     else
       render :new
