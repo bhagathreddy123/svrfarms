@@ -15,6 +15,7 @@ resources :properties
     get 'map_options'
     get 'list_property'
     get 'help'
+    match :requirement, via: [:get, :post]
   end
 end
 

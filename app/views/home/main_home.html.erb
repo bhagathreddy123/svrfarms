@@ -1,18 +1,35 @@
     <link rel="stylesheet" href="/assets/style-1.css">
      <script src="/assets/slider.js"></script>
-<div class="logo">
-<img src="/assets/SVR-1.jpg" class="logo_new">
-</div>
 
-<div class="row">
-<div class="land">Land</div>
-<div class="land">Land</div>
-<div class="land">Land</div>
-<div class="land">Land</div>
-<div class="land">Land</div>
-<div class="land">Land</div>
-</div>
+        <div class="row">
+            <div class="col-md-12">
+              <div class="text-center">
+                <h1 style="color:#FFF; margin-top:0px;"><a href="<%= home_index_path %>"><img src="/assets/SVR-1.jpg" class="logo_new"></a></h1>
+                <div class="project-container">
+                  <div class="project-type">
+                    <div class="text-label"><a href="<%= home_index_path(:type=>"agriculture") %>" class="property-select">Agriculture Lands</a></div>
+                  </div>
+                  <div class="project-type">
+                    <div class="text-label"><a href="<%= home_index_path(:type=>"farm") %>" class="property-select">Farm Lands</a></div>
+                  </div>
+                  <div class="project-type">
+                    <div class="text-label"><a href="<%= home_index_path(:type=>"commercial") %>" class="property-select">Commercial Lands</a></div>
+                  </div>
+                  <div class="project-type">
+                    <div class="text-label"><a href="<%= home_index_path(:type=>"industrial") %>" class="property-select">Industrial Lands</a></div>
+                  </div>
 
+                  <div class="project-type">
+                    <div class="text-label"><a href="<%= home_index_path(:type=>"residential") %>" class="property-select">Residential Lands</a></div>
+                  </div>
+                  <div class="project-type">
+                    <div class="text-label"><a href="<%= home_index_path(:type=>"barren") %>" class="property-select">Barren Lands</a></div>
+                  </div>
+                  <!-- &nbsp;&nbsp; &nbsp;&nbsp;        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  -->
+                </div>
+
+
+<br/>
      <div id="sliderFrame">
                   <div id="slider">
                     <a href="" target="_blank">
@@ -28,3 +45,63 @@
 
                   </div>
                 </div>
+
+
+                <a href="https:www.facebook.com"><img  src="/assets/fb.png" ></a>
+                <a href="#" class="property-select" onclick="javascript: signup();"> PostRequirements</a>
+                <a href="/home/list_property">ListProperty</a>
+
+<br/>
+
+                   <a href="/home/about_us">about_us</a>
+                      <a href="/home/privacy_policy">services</a>
+                         <a href="/contactus/new">contact</a>
+
+
+                              <div id='overlay' style='filter:alpha(opacity=50);' onclick="hide_popup();"></div>
+  <div align='center' id='popup_box'>
+    <div style='float: right; margin-top: -40px;margin-right:-40px'></div>
+    <div id='popup_body' style='float:right'></div>
+  </div>
+
+
+<style>
+   #overlay{
+      display: none;
+      background-color: #000000;
+      height:500px;
+      left:0;
+      position:fixed;
+      top:0;
+      width:100%;
+      z-index: 1000;
+      width: 100000px;
+      height: 941px;
+      opacity: 0.7;
+    }
+    .overlay1{
+      display: none;
+      background-color: #000000;
+      height:500px;
+      left:0;
+      position:fixed;
+      top:0;
+      width:100%;
+      z-index: 1000;
+      width: 100000px;
+      height: 941px;
+      opacity: 1.0;
+    }
+    #popup_box{
+      display:none;
+      height:auto;
+      width: 450px;
+      left:34%;
+      margin: -220px 0 0 -250px;
+      padding:15px;
+      position:fixed;
+      top:5%;
+      z-index:2000;
+      font-size: 15px;
+    }
+</style>
