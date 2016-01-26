@@ -9,15 +9,9 @@ default: &default
 
 development:
   <<: *default
-  database: svrfarms_development
+  database: svrfarms1_development
 
 
 test:
   <<: *default
-  database: svrfarms_test
-
-production:
-  <<: *default
-  database: svrfarms_production
-  username: svrfarms
-  password: <%= ENV['SVRFARMS_DATABASE_PASSWORD'] %>
+  database: svrfarms1_test

@@ -10,19 +10,21 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-
 group :development, :test do
   gem 'byebug'
 end
-
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-
 #User authenticatication
 gem 'devise'
 #Image Document Uploading
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
-# nested attributes images or comments
+# nested attributes for images or comments
 gem "nested_form"
+
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end
