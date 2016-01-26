@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160109101454) do
+ActiveRecord::Schema.define(version: 20160126180601) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -76,6 +76,13 @@ ActiveRecord::Schema.define(version: 20160109101454) do
     t.string   "unit",                  limit: 255
     t.datetime "created_at",                                         null: false
     t.datetime "updated_at",                                         null: false
+    t.float    "airport_lat",           limit: 24
+    t.float    "airport_lng",           limit: 24
+    t.float    "bus_lat",               limit: 24
+    t.float    "bus_lng",               limit: 24
+    t.float    "train_lat",             limit: 24
+    t.float    "train_lng",             limit: 24
+    t.string   "video_url",             limit: 255
   end
 
   add_foreign_key "images", "properties"

@@ -1,2 +1,60 @@
-<h1>Home#land</h1>
-<p>Find me in app/views/home/land.html.erb</p>
+<li><a href='/home/land?lat=<%= @lat %>&lon=<%=@lon%>&city=<%= @city %>' title="Mumbai"><%= @city %></a><i class="fa fa-chevron-right"></i></li>
+
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+</div>
+
+
+<div class="box-result results-collapse contentResult" >
+        <%= select_tag :price, options_for_select([["Select"],["Sortable Sorted by: Price (Low to High)","low"],["Sortable Sorted by: Price (High to Low)","high"],["Location Ascending Order","lasc"],["Location Descending Order","lsdc"]]),:class => "price-area",:onchange => "show_this(this.value);" %>    
+        <div id ="asc_dsc">
+          <%= render :partial => "asc_dsc" %>
+        </div>
+      </div>
+    </div> 
+
+
+<script>
+  function show_this(price) {
+    var city = '<%= @city %>';
+    $.ajax({
+      url: "/home/land",
+      type: "get",
+      dataType: "script",
+      data: {
+        price: price,
+        city: city
+      },
+      success: function(data) {
+      }
+    });
+  }
+</script>
+
+
+
+
+
+<script type="text/javascript">
+  var handler = Gmaps.build('Google');
+  var mapOptions = {Zoom: 7, center: { lat: 13.612518, lng: 77.51549},
+ mapTypeId: google.maps.MapTypeId.MAP};
+
+  handler.buildMap({provider: mapOptions, internal: {id: 'map'}}, function() {
+    // I assume this is the way you retrieve the amrkers array
+    var json_data = <%=raw @hash.to_json %>;
+    var markers = handler.addMarkers(json_data);
+
+    _.each(json_data, function(json, index) {
+      var marker = markers[index];
+      json.marker = marker;
+      
+      google.maps.event.addListener(marker.getServiceObject(), 'click', function() {
+       window.location.href = '/home/land1?id=' +json.id ;
+       handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+      });
+    });
+  });
+
+</script>

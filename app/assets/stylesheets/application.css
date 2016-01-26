@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+
+
+
+
+
+#property_1{
+    float:left;
+    width:45%;
+    position:relative;
+    top:5px;
+    padding:5px 20px 10px 5px;
+    left:5px;
+}
+
+.gm-style img, .gmnoprint img{
+    max-width: none;
+}
+
+#bus_option, #train_option, #airport_option {
+    background-color: #FFF;
+    color: #000;
+}
+a#bus_option:link, a#train_option:link, a#airport_option:link{
+    background-color: #FFF;
+    color: #000;}
+
+a#bus_option:hover, a#train_option:hover, a#airport_option:hover{
+    background-color: #FFF;
+    color: #000;}
+a#bus_option:visited, a#train_option:visited, a#airport_option:visited{
+    background-color: #FFF;
+    color: #000;}
+a#bus_option:active, a#train_option:active, a#airport_option:active{
+    background-color: #FFF;
+    color: #000;}

@@ -1,2 +1,58 @@
-<h1>Home#gallery</h1>
-<p>Find me in app/views/home/gallery.html.erb</p>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-6">
+      <br/>
+      <ul class="bxslider">
+        <% @images.each do |image| %>
+        <li><%= image_tag(image.image.url(:original), :height => "300", :width =>"500")  %></li>
+        <% end %>
+      </ul>
+    </div>
+
+
+    <div class="col-md-6" >
+
+      <div class="page-header">
+        <h2>Property Details</h2>
+      </div>
+
+   
+        <p> Title : <%= @property.title%>    </p>  
+        <p> Type of Land :<%= @property.type_of_land %>   </p>  
+        <p> Price:<%= @property.price %>   </p>  
+        <p> City:<%= @property.city %>   </p>  
+        <p> Location:<%= @property.location %>    </p>  
+        <p> Description:<%= @property.description %>    </p>  
+        <p>  Mobile: <%= @property.mobile %>     </p>  
+        
+       </div>
+
+  </div>
+</div>
+
+<br/><br/>
+<br/>
+<br/>
+<br/><br/><br/><br/><br/>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.bxslider').bxSlider();
+
+  });
+</script>
+
+
+<style>
+  .bx-wrapper{
+    float: left;
+    width: 480px;
+    
+  }
+
+  
+  
+</style>

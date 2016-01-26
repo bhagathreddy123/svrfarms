@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery_nested_form
+//= require underscore
+//= require gmaps/google
 //= require turbolinks
 //= require_tree .
 

@@ -28,3 +28,8 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
 end
+gem 'gmaps4rails', '~> 2.1', '>= 2.1.2'
+gem 'geocoder', '~> 1.2', '>= 1.2.14'
+#displaying different devises
+gem 'mobvious'
+gem 'mobvious-rails'
